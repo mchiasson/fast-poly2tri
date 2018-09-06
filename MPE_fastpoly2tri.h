@@ -136,6 +136,13 @@
 
 //SECTION: Engine define overrides
 
+#if defined(_MSC_VER)
+#include <basetsd.h> // SSIZE_T
+#include <stdlib.h> // qsort
+#include <search.h> // qsort
+typedef SSIZE_T ssize_t;
+#endif
+
 #include <math.h>  // fabs fabsf
 
 #ifndef MPE_MemorySet
